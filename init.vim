@@ -4,8 +4,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 
-Plug 'Shougo/neosnippet.vim'
-Plug 'Shougo/neosnippet-snippets'
+" Plug 'Shougo/neosnippet.vim'
+" Plug 'Shougo/neosnippet-snippets'
 Plug 'tpope/vim-fugitive'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'flazz/vim-colorschemes'
@@ -15,7 +15,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " Plug 'Valloric/YouCompleteMe'
-Plug 'tpope/vim-cucumber'
+" Plug 'tpope/vim-cucumber'
 Plug 'Shougo/deoplete.nvim'
 Plug 'zchee/deoplete-jedi'
 Plug 'davidhalter/jedi'
@@ -33,6 +33,7 @@ colorscheme solarized
 
 " Spaces and tabs
 filetype plugin indent on
+autocmd FileType python setlocal tabstop=4 " Force tabstop=4 for Python files https://github.com/neovim/neovim/issues/3786
 " show existing tab with 4 spaces width
 set tabstop=4
 " when indenting with '>', use 4 spaces width
@@ -58,7 +59,9 @@ set foldenable
 
 " Undo redo
 
-
+" Vim split
+set splitright
+set splitbelow
 
 " Misc
 set t_Co=256
