@@ -8,8 +8,13 @@ export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 export JAVA_HOME=/usr/lib/jvm/default-java
 export JAVACMD=/usr/lib/jvm/default-java/bin/java
 export PATH="/opt/android-studio/bin:$PATH"
+export ANDROID_HOME="$HOME/Android/Sdk"
+export PATH=$PATH:/opt/gradle/gradle-4.6/bin
+export PATH=$PATH:/home/thomas/Documents/dencrypt_talk/android-ndk-r11c
 
 export LS_COLORS="no=00:fi=00:di=00;34:ln=00;36:pi=40;33:so=00;35:bd=40;33;01:ex=00;35"
+
+export LD_LIBRARY_PATH=/home/thomas/Documents/dencryot_msg_console/dencrypt-message-sdk/submodules/mbedtls/build/debug/debian/x86_64/lib
 
 # ZSH_THEME="cloud"
 ZSH_THEME="agnoster"
@@ -28,7 +33,6 @@ source $ZSH/oh-my-zsh.sh
 
 EDITOR=vim
 
-#TODO get the ids from PS/2 Generic Mouse and PS/2 Generic Mouse
 togglepad()
 {
     xinput_str="$(xinput)"
@@ -98,5 +102,15 @@ ark() {
 	esac
 } # }}}
 
-source ./.aliases
+remove_docker_images() {
+    if [[ -n $(docker ps -a -q) ]]; then
+        docker rm $(docker ps -a -q)
+    fi
+    if [[ -n $(docker images -a -q) ]]; then
+        docker rmi $(docker images -a -q)
+    fi
+}
+
+
+source ~/.aliases
 

@@ -48,7 +48,7 @@ set encoding=utf-8
 
 set cursorline
 
-filetype indent on
+" filetype indent on
 
 set wildmenu
 
